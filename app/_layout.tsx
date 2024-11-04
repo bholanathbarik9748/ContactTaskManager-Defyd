@@ -1,12 +1,9 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View } from "react-native";
+import React from "react";
+import RootNavigation from "@/src/navigation/RootNavigation";
 
 const _layout = () => {
-  return (
-    <View>
-      <Text>_layout</Text>
-    </View>
-  )
-}
+  return <RootNavigation />;
+};
 
 export default _layout;

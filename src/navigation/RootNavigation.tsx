@@ -1,14 +1,18 @@
-import { Stack } from "expo-router";
+// navigation/RootNavigation.tsx
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-export default function Layout() {
+import HomeScreen from "../screens/HomeScreen/HomeScreen";
+
+const Stack = createNativeStackNavigator();
+
+export default function RootNavigation() {
   return (
-    <Stack>
-      <Stack.Screen name="index" options={{ title: "Home" }} />
-      <Stack.Screen
-        name="contact/[contactId]"
-        options={{ title: "Contact Details" }}
-      />
-      <Stack.Screen name="tasks/index" options={{ title: "All Tasks" }} />
-    </Stack>
+    <NavigationContainer independent={true}>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={HomeScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
